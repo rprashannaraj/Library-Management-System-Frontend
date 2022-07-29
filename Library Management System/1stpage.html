@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Sidebar Menu Html CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script>
+		const form = document.querySelector("form"),
+        nextBtn = form.querySelector(".nextBtn"),
+        backBtn = form.querySelector(".backBtn"),
+        allInput = form.querySelectorAll(".first input");
+
+
+nextBtn.addEventListener("click", ()=> {
+    allInput.forEach(input => {
+        if(input.value != ""){
+            form.classList.add('secActive');
+        }else{
+            form.classList.remove('secActive');
+        }
+    })
+})
+
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+	</script> -->
+	<style>
+		/* colors
+ #ED1C5B; light 
+ #E20E4E; dark
+*/
+
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar start here  */
+.sidebar{
+    position: fixed;
+    background: #ED1C5B;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sidebar h2{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #E20E4E;
+    padding: 20px;
+    font-weight: bold;
+}
+
+
+.sidebar ul li {
+    margin: 25px 0;
+}
+
+.sidebar ul li a{
+    color: #ffffff;
+    padding: 0 30px;
+
+}
+.sidebar ul li a:hover{
+    color: #000000;
+    margin-left: 20px;
+    transition: 0.4s;
+}
+
+/* Sidebar end Here  */
+
+/* Main Content Section Start Here  */
+
+.main{
+    margin-left: 200px;
+    padding: 5px;
+}
+
+.main h2{
+    margin-top: 20px;
+}
+.logo {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.logo-img {
+	width: 170px;
+	margin-top: 20px;
+}
+.container{
+    position: relative;
+    max-width: 950px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 400px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.container form .form{
+    position: absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+/* for add a subject box -------------------------------------------------------------------------*/
+.containe{
+    position: relative;
+    max-width: 950px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.containe form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 49px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.containe form .form{
+    position: absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.containe form .fiel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .field .input-fiel{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-fiel label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-fiel input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-fiel input :focus,
+.input-fiel select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.containe form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.containe form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+/* for add a subject box -------------------------------------------------------------------------*/
+
+.container form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.container form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+form button:hover{
+    background-color: #265df2;
+}
+form button i,
+form .backBtn i{
+    margin: 0 6px;
+}
+form .backBtn i{
+    transform: rotate(180deg);
+}
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
+/* Logout */
+.button {
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+	</style>
+  </head>
+  <body>
+    <div class="sidebar">
+		<a href="#" class="logo">
+			<img src="logo.png" class="logo-img">
+		</a>
+      <ul class="nav">
+        <li>
+          <a href="#subject">
+            <!-- <i class="fas fa-server"></i> -->
+            <span>Add Subject</span>
+          </a>
+        </li>
+        <li>
+          <a href="#book">
+            <!-- <i class="fas fa-concierge-bell"></i> -->
+            <span>Add a Book</span>
+          </a>
+        </li>
+        <li>
+          <a href="#adduser">
+            <!-- <i class="fas fa-calendar-alt"></i> -->
+            <span>Add a User</span>
+          </a>
+        </li>
+        <li>
+          <a href="#bookissue">
+            <!-- <i class="fas fa-cog"></i> -->
+            <span>Book Issue</span>
+          </a>
+        </li>
+        <li>
+          <a href="#bookreturn">
+            <!-- <i class="fas fa-question-circle"></i> -->
+            <span>Book Return</span>
+          </a>
+        </li>
+        <li>
+          <a href="#searchbook">
+            <!-- <i class="fas fa-address-card"></i> -->
+            <span>Search Book</span>
+          </a>
+        </li>
+      </ul>
+      <button class="button" onclick="window.location.href = 'index.html';"><span>Logout </span></button>
+    </div>
+
+    <div class="main">
+      <h2 id="subject" style="text-align: center;border-bottom:#000000 solid medium">Add a Subject</h2><br>
+      <p>
+       
+		<div class="containe">
+			<form action="#">
+						<div class="field">
+							<div class="input-fiel">
+								<label style="margin-left:50px;">Subject Name</label>
+								<input type="text" style="text-align: center;margin-left: 10px;" >
+							</div>
+						</div>
+					
+							<button class="submit">
+								<span class="btnText">Save Subject</span>
+								<i class="uil uil-navigator"></i>
+							</button>
+			</form>
+		</div>
+					
+		
+      </p>
+
+        <h2 id="book" style="text-align: center;margin-top: 30%;border-bottom:#000000 solid medium">Add a Book</h2>
+		<p>
+        
+			<div class="container">
+			<form action="#">
+				<div class="form first">
+					<div class="details personal">
+						<span class="title">Personal Details</span>
+	
+						<div class="fields">
+							<div class="input-field">
+								<label>Access Number</label>
+								<input type="text" style="text-align: center;" >
+							</div>
+	
+							<div class="input-field">
+								<label>Subject Id</label>
+								<input type="text" style="text-align: center;">
+							</div>
+	
+							<div class="input-field">
+								<label>Book Title</label>
+								<input type="text"  style="text-align: center;">
+							</div>
+	
+							<div class="input-field">
+								<label>Author Name</label>
+								<input type="text" style="text-align: center;" >
+							</div>
+	
+							<div class="input-field">
+								<label>Publisher</label>
+								<input type="text"  style="text-align: center;">
+							</div>
+	
+							<div class="input-field">
+								<label>Pages</label>
+								<input type="text"  style="text-align: center;">
+							</div>
+							<div class="input-field">
+								<label>Price</label>
+								<input type="text" style="text-align: center;" >
+							</div>
+						</div>
+					</div>
+					<button class="submit">
+						<span class="btnText">Submit</span>
+						<i class="uil uil-navigator"></i>
+					</button>
+					</div>
+			</div>
+		</p>
+	
+      <h2 id="adduser" style="text-align: center;margin-top: 25%;  border-bottom:#000000 solid medium">Add a User</h2>
+      <p>
+				<div class="containe">
+          <form action="#">
+                <div class="fiel">
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">User Name</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">Password</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">User Type</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>
+                </div>
+              
+                <button class="submit">
+                  <span class="btnText">Save User</span>
+                  <i class="uil uil-navigator"></i>
+                </button>
+              </form>
+        </div>
+      </p>
+      <h2 id="bookissue" style="text-align: center;margin-top: 35%; border-bottom:#000000 solid medium">Issue a  Book</h2>
+      <p>
+        <div class="containe">
+          <form action="#">
+                <div class="fiel">
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">Book Title</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">Issue To</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>              
+                <button class="submit">
+                  <span class="btnText">Save User</span>
+                  <i class="uil uil-navigator"></i>
+                </button>
+              </form>
+        </div>
+      </p>
+      <h2 id="bookreturn" style="text-align: center;margin-top: 35%; border-bottom:#000000 solid medium">Return a Book</h2>
+      <p>
+        <div class="containe">
+          <form action="#">
+                <div class="fiel">
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">Book Title</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>
+                  <div class="input-fiel">
+                    <label>Date Of Issue</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>     
+                  <div class="input-fiel">
+                    <label style="margin-left:50px;">Expected Date Of Return</label>
+                    <input type="text" style="text-align: center;margin-left: 10px;" >
+                  </div>
+                         
+                <button class="submit">
+                  <span class="btnText">Return</span>
+                  <i class="uil uil-navigator"></i>
+                </button>
+              </form>
+        </div>
+      </p>
+      <h2 id="searchbook" style="text-align: center;margin-top: 35%;border-bottom:#000000 solid medium">Search Books</h2>
+      <p>
+        <form action="">
+          <input type="radio" id="html" name="fav_language" value="HTML">
+          <label for="html">Search by Title</label><br>
+          <input type="radio" id="css" name="fav_language" value="CSS">
+          <label for="css">Search by Author</label><br>
+          <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+          <label for="javascript">Search By Books</label>
+          <div class="containe">
+            <form action="#">
+                  <div class="fiel">
+                    <div class="input-fiel">
+                      <label style="margin-left:50px;">Book Title</label>
+                      <input type="text" style="text-align: center;margin-left: 10px;" >
+                    </div>
+                    <button class="submit">
+                      <span class="btnText">Search Now</span>
+                      <i class="uil uil-navigator"></i>
+                    </button>
+        
+        </form>
+      </p> 
+       
+    </div>
+  </body>
+</html>
